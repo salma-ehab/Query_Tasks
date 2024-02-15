@@ -38,12 +38,17 @@ select *
 
 from fct_SampleSuperstore_Purchase
 
-where type like '%Consumer' and day(Purchase_DATEID) = 01;
+where type like '%Consumer' and year (Purchase_DATEID) = 2022 and day(Purchase_DATEID) = 01;
 ```
 
 ## Justification
 The improved query was modified to accomplish the following: 
 - Instead of specifying all consumer types for selection, it employed a wildcard search ("%consumer"). 
-- Instead of explicitly indicating the first day of each month, it extracted the day from the date and only selected records where 
-  the day matched the first day of each month.
+- Instead of explicitly stating the first day of every month in 2022, it derived the day from the date and exclusively picked records 
+  where the day aligned with the first day of each month in that year.
+
+
+
+
+
 
